@@ -7,7 +7,10 @@ import { FaArrowDownLong } from "react-icons/fa6";
 import { IoLogoDribbble, IoLogoInstagram } from "react-icons/io";
 import CountUp from "react-countup";
 import Link from "next/link";
+import BlurFadeText from "./ui/blur-fade-text";
+import BlurFade from "./ui/blur-fade";
 
+const BLUR_FADE_DELAY = 0.04;
 const Bio = () => {
   return (
     <div
@@ -21,51 +24,70 @@ const Bio = () => {
         </p>
 
         <div className='space-y-0.5'>
-          <h1 className='text-[36px] md:text-[64px] font-medium'>
-            Henry Daniel
-          </h1>
-          <h4 className='text-[20px] md:text-[36px]'>UI/UX Designer</h4>
+          <BlurFadeText
+            delay={BLUR_FADE_DELAY}
+            yOffset={8}
+            text='Henry daniel'
+            className='text-[36px] md:text-[64px] font-medium'
+          />
+          <BlurFadeText
+            className='text-[20px] md:text-[36px]'
+            text='UI/UX Designer'
+            delay={BLUR_FADE_DELAY + 0.02}
+            yOffset={8}
+          />
         </div>
-        <p>
-          {`I believe that great design should be user-centered, functional, and
+        <BlurFadeText
+          delay={BLUR_FADE_DELAY + 0.03}
+          text={`I believe that great design should be user-centered, functional, and
         aesthetically pleasing. Throughout my career, I've had the privilege of
         working on a diverse range of projects that have allowed me to develop a
         unique skill set and a deep understanding of the design process. In this
         portfolio, I'll showcase some of my most notable work, highlighting my
         skills, design philosophy, and commitment to creating exceptional user
         experiences.`}
-        </p>
+        />
         <div className='flex flex-row items-center justify-between md:justify-normal md:gap-5 mt-3'>
-          <Button
-            variant={"default"}
-            className='bg-black rounded-[24px] md:px-10 mr-2'
-          >
-            Contact
-          </Button>
-          <Link
-            href=''
-            className='h-9 w-9 flex bg-black items-center justify-center rounded-full'
-          >
-            <IoLogoDribbble color='white' size={24} />
-          </Link>
-          <Link
-            href=''
-            className='h-9 w-9 flex bg-black items-center justify-center rounded-full'
-          >
-            <FaFigma color='white' size={20} />
-          </Link>
-          <Link
-            href=''
-            className='h-9 w-9 flex bg-black items-center justify-center rounded-full'
-          >
-            <IoLogoInstagram color='white' size={20} />
-          </Link>
-          <Link
-            href=''
-            className='h-9 w-9 flex bg-black items-center justify-center rounded-full'
-          >
-            <FaLinkedinIn color='white' size={20} />
-          </Link>
+          <BlurFade delay={BLUR_FADE_DELAY + 0.04} yOffset={0}>
+            <Button
+              variant={"default"}
+              className='bg-black rounded-[24px] md:px-10 mr-2'
+            >
+              Contact
+            </Button>
+          </BlurFade>
+          <BlurFade delay={BLUR_FADE_DELAY + 0.05} yOffset={0}>
+            <Link
+              href=''
+              className='h-9 w-9 flex bg-black items-center justify-center rounded-full'
+            >
+              <IoLogoDribbble color='white' size={24} />
+            </Link>
+          </BlurFade>
+          <BlurFade delay={BLUR_FADE_DELAY + 0.06} yOffset={0}>
+            <Link
+              href=''
+              className='h-9 w-9 flex bg-black items-center justify-center rounded-full'
+            >
+              <FaFigma color='white' size={20} />
+            </Link>
+          </BlurFade>
+          <BlurFade delay={BLUR_FADE_DELAY + 0.07} yOffset={0}>
+            <Link
+              href=''
+              className='h-9 w-9 flex bg-black items-center justify-center rounded-full'
+            >
+              <IoLogoInstagram color='white' size={20} />
+            </Link>
+          </BlurFade>
+          <BlurFade delay={BLUR_FADE_DELAY + 0.08} yOffset={0}>
+            <Link
+              href=''
+              className='h-9 w-9 flex bg-black items-center justify-center rounded-full'
+            >
+              <FaLinkedinIn color='white' size={20} />
+            </Link>
+          </BlurFade>
         </div>
       </div>
       <div className='flex flex-col items-start justify-center gap-4 w-full lg:w-[30%]'>

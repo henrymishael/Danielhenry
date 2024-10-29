@@ -8,7 +8,6 @@ import { FaBars } from "react-icons/fa";
 interface navbarItem {
   name: string;
   href: string;
-  parent?: string;
 }
 
 const NavLinks: navbarItem[] = [
@@ -50,20 +49,13 @@ const Navbar = () => {
         mulish.className
       } px-10 flex flex-row items-center justify-between `}
     >
-      <Image
-        className='hidden md:block'
-        src='/logo_brand.svg'
-        alt='logo-brand'
-        height={68}
-        width={68}
-      />
-      <Image
-        className='block md:hidden'
-        src='/logo_brand.svg'
-        alt='logo-brand'
-        height={40}
-        width={40}
-      />
+      <Link href='/' className='hidden md:block'>
+        <Image src='/logo_brand.svg' alt='logo-brand' height={68} width={68} />
+      </Link>
+
+      <Link href={"/"} className='block md:hidden'>
+        <Image src='/logo_brand.svg' alt='logo-brand' height={40} width={40} />
+      </Link>
       <nav className='hidden md:flex items-center gap-6 text-brand-text'>
         {NavLinks.map((item: any) => (
           <Link href={item?.href} key={item?.name}>
